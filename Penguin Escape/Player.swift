@@ -55,7 +55,10 @@ class Player: SKSpriteNode, GameSprite {
             ])
         
     }
-    func onTap() {}
+    func onTap() {
+        self.xScale += 1
+        self.yScale += 1
+    }
     
     func update() {
         

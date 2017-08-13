@@ -39,38 +39,50 @@ class GameScene: SKScene {
         player.position = CGPoint(x: 150, y: 250)
         self.addChild(player)
         
-        self.motionManager.startAccelerometerUpdates()
+//        self.motionManager.startAccelerometerUpdates()
     }
     
     override func didSimulatePhysics() {
         self.camera!.position = player.position
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in (touches) {
+            let location = touch.location(in: self)
+            let nodeTouched = atPoint(location)
+            if let gameSprite = nodeTouched as? GameSprite {
+                gameSprite.onTap()
+            }
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         player.update()
-        if let accelData = self.motionManager.accelerometerData {
-            var forceAmount:CGFloat
-            var movement = CGVector()
-            
-            
-            // 장치 방향에 따라 tilt의 숫자가 의도와 반대로 가리킬 수 있다.
-            // UIApplication 클래스를 통해 현재 방향 정보를 enum으로 받아옴
-            switch UIApplication.shared.statusBarOrientation {
-            case .landscapeLeft:
-                forceAmount = 20000
-            case .landscapeRight:
-                forceAmount = -20000
-            default:
-                forceAmount = 0
-            }
-         
-            if accelData.acceleration.y > 0.15 {
-                movement.dx = forceAmount
-            }
-            else if accelData.acceleration.y < -0.15 {
-                movement.dx = -forceAmount
-            }
-            player.physicsBody?.applyForce(movement)
-        }
+//        Tilt TEST------------------------------------------------
+//        if let accelData = self.motionManager.accelerometerData {
+//            var forceAmount:CGFloat
+//            var movement = CGVector()
+//            
+//            
+//            // 장치 방향에 따라 tilt의 숫자가 의도와 반대로 가리킬 수 있다.
+//            // UIApplication 클래스를 통해 현재 방향 정보를 enum으로 받아옴
+//            switch UIApplication.shared.statusBarOrientation {
+//            case .landscapeLeft:
+//                forceAmount = 20000
+//            case .landscapeRight:
+//                forceAmount = -20000
+//            default:
+//                forceAmount = 0
+//            }
+//         
+//            if accelData.acceleration.y > 0.15 {
+//                movement.dx = forceAmount
+//            }
+//            else if accelData.acceleration.y < -0.15 {
+//                movement.dx = -forceAmount
+//            }
+//            player.physicsBody?.applyForce(movement)
+//        }
+//        ------------------------------------------------Tilt TEST
     }
 }
