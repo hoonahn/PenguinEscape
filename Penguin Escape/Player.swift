@@ -19,6 +19,12 @@ class Player: SKSpriteNode, GameSprite {
         super.init(texture: nil, color: .clear, size: initialSize)
         createAnimation()
         self.run(flyAnimation, withKey: "flapAnimation")
+        
+        let bodyTexture = textureAtlas.textureNamed("pierre-flying-3")
+        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
+        self.physicsBody?.linearDamping = 0.9
+        self.physicsBody?.mass = 30
+        self.physicsBody?.allowsRotation = false
     }
     
     func createAnimation() {
@@ -50,6 +56,10 @@ class Player: SKSpriteNode, GameSprite {
         
     }
     func onTap() {}
+    
+    func update() {
+        
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

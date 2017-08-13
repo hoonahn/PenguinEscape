@@ -18,6 +18,7 @@ class Bee: SKSpriteNode, GameSprite {
         createAnimations()
         self.run(flyAnimation)
         self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+        self.physicsBody?.affectedByGravity = false
     }
     
     required init?(coder aDecoder: NSCoder) {
