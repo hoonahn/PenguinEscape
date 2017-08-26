@@ -38,7 +38,6 @@ class Ground: SKSpriteNode, GameSprite {
             tileNode.position.x = tileCount * tileSize.width
             tileNode.anchorPoint = CGPoint(x: 0, y: 1)
             self.addChild(tileNode)
-            
             tileCount += 1
         }
         

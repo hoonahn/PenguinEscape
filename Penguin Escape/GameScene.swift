@@ -27,15 +27,48 @@ class GameScene: SKScene {
         
         self.camera = cam
         
-        screenCenterY = self.size.height / 2
+        /*
         
+        // 꿀벌 생성
         let bee2 = Bee()
-        
         bee2.position = CGPoint(x:325, y:325)
         self.addChild(bee2)
         let bee3 = Bee()
         bee3.position = CGPoint(x:200, y:325)
         self.addChild(bee3)
+        
+        // 박쥐 생성
+        let bat = Bat()
+        bat.position = CGPoint(x: 400, y: 200)
+        self.addChild(bat)
+        
+        // 블레이드 생성
+        let blade = Blade()
+        blade.position = CGPoint(x: 300, y: 76)
+        self.addChild(blade)
+        
+        // 미친파리 생성
+        let madFly = MadFly()
+        madFly.position = CGPoint(x: 50, y: 50)
+        self.addChild(madFly)
+        
+        // 브론즈 코인 생성
+        let bronzeCoin = Coin()
+        bronzeCoin.position = CGPoint(x: -50, y: 250)
+        self.addChild(bronzeCoin)
+        
+        // 브론즈 코인 생성
+        let goldCoin = Coin()
+        goldCoin.position = CGPoint(x: 25, y: 250)
+        goldCoin.turnToGold()
+        self.addChild(goldCoin)
+        
+        // 파워업 스타 생성
+        let star = Star()
+        star.position = CGPoint(x: 250, y: 250)
+        self.addChild(star)
+        
+        */
         
         ground.position = CGPoint(x: -self.size.width * 2, y: 30)
         ground.size = CGSize(width: self.size.width * 6, height: 0)
@@ -44,8 +77,12 @@ class GameScene: SKScene {
         
         player.position = initialPlayerPosition
         self.addChild(player)
+        
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
 //        self.motionManager.startAccelerometerUpdates()
+        
+        screenCenterY = self.size.height / 2
+        
     }
     
     override func didSimulatePhysics() {
@@ -64,7 +101,7 @@ class GameScene: SKScene {
             cam.xScale = newScale
         }
         playerProgress = player.position.x - initialPlayerPosition.x
-        print(playerProgress)
+        
         self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
         
         ground.checkForReposition(playerProgress: playerProgress)

@@ -1,15 +1,15 @@
 //
-//  Bee.swift
+//  MadFly.swift
 //  Penguin Escape
 //
-//  Created by Sanghoon Ahn on 2017. 7. 20..
+//  Created by Sanghoon Ahn on 2017. 8. 26..
 //  Copyright © 2017년 AHN. All rights reserved.
 //
 
 import SpriteKit
 
-class Bee: SKSpriteNode, GameSprite {
-    var initialSize: CGSize = CGSize(width: 28, height: 24)
+class MadFly: SKSpriteNode, GameSprite {
+    var initialSize = CGSize(width: 61, height: 29)
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Enemies")
     var flyAnimation = SKAction()
     
@@ -26,10 +26,11 @@ class Bee: SKSpriteNode, GameSprite {
     }
     
     func createAnimations() {
-        let flyFrames: [SKTexture] = [textureAtlas.textureNamed("bee"), textureAtlas.textureNamed("bee-fly")]
+        let flyFrames:[SKTexture] = [textureAtlas.textureNamed("madfly"), textureAtlas.textureNamed("madfly-fly")]
         let flyAction = SKAction.animate(with: flyFrames, timePerFrame: 0.14)
         flyAnimation = SKAction.repeatForever(flyAction)
     }
     
-    func onTap() {}
+    func onTap(){ }
+    
 }

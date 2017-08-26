@@ -1,15 +1,15 @@
 //
-//  Bee.swift
+//  Bat.swift
 //  Penguin Escape
 //
-//  Created by Sanghoon Ahn on 2017. 7. 20..
+//  Created by Sanghoon Ahn on 2017. 8. 26..
 //  Copyright © 2017년 AHN. All rights reserved.
 //
 
 import SpriteKit
 
-class Bee: SKSpriteNode, GameSprite {
-    var initialSize: CGSize = CGSize(width: 28, height: 24)
+class Bat: SKSpriteNode, GameSprite {
+    var initialSize: CGSize = CGSize(width: 44, height: 24)
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Enemies")
     var flyAnimation = SKAction()
     
@@ -26,8 +26,8 @@ class Bee: SKSpriteNode, GameSprite {
     }
     
     func createAnimations() {
-        let flyFrames: [SKTexture] = [textureAtlas.textureNamed("bee"), textureAtlas.textureNamed("bee-fly")]
-        let flyAction = SKAction.animate(with: flyFrames, timePerFrame: 0.14)
+        let flyFrames: [SKTexture] = [textureAtlas.textureNamed("bat"), textureAtlas.textureNamed("bat-fly")]
+        let flyAction = SKAction.animate(with: flyFrames, timePerFrame: 0.12)
         flyAnimation = SKAction.repeatForever(flyAction)
     }
     

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		C55699921F28F432002F1EF3 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55699911F28F432002F1EF3 /* Ground.swift */; };
 		C55699941F2E1CED002F1EF3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55699931F2E1CED002F1EF3 /* Player.swift */; };
+		C567F82F1F513CEC001D7098 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = C567F82E1F513CEC001D7098 /* Star.swift */; };
+		C567F8311F5143EE001D7098 /* MadFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C567F8301F5143EE001D7098 /* MadFly.swift */; };
+		C567F8331F5146C2001D7098 /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C567F8321F5146C2001D7098 /* Bat.swift */; };
+		C567F8351F5147DE001D7098 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = C567F8341F5147DE001D7098 /* Blade.swift */; };
+		C567F8371F514A81001D7098 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C567F8361F514A81001D7098 /* Coin.swift */; };
 		C5D8097D1F1D0870007832A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D8097C1F1D0870007832A8 /* AppDelegate.swift */; };
 		C5D8097F1F1D0870007832A8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5D8097E1F1D0870007832A8 /* GameScene.sks */; };
 		C5D809811F1D0870007832A8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5D809801F1D0870007832A8 /* Actions.sks */; };
@@ -24,6 +29,11 @@
 /* Begin PBXFileReference section */
 		C55699911F28F432002F1EF3 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		C55699931F2E1CED002F1EF3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C567F82E1F513CEC001D7098 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		C567F8301F5143EE001D7098 /* MadFly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadFly.swift; sourceTree = "<group>"; };
+		C567F8321F5146C2001D7098 /* Bat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
+		C567F8341F5147DE001D7098 /* Blade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
+		C567F8361F514A81001D7098 /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		C5D809791F1D0870007832A8 /* Penguin Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penguin Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D8097C1F1D0870007832A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5D8097E1F1D0870007832A8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -68,19 +78,24 @@
 		C5D8097B1F1D0870007832A8 /* Penguin Escape */ = {
 			isa = PBXGroup;
 			children = (
-				C5D8097C1F1D0870007832A8 /* AppDelegate.swift */,
-				C5D8097E1F1D0870007832A8 /* GameScene.sks */,
+				C5D8098E1F1D0870007832A8 /* Info.plist */,
 				C5D809801F1D0870007832A8 /* Actions.sks */,
+				C5D8097E1F1D0870007832A8 /* GameScene.sks */,
+				C5D8097C1F1D0870007832A8 /* AppDelegate.swift */,
+				C567F8321F5146C2001D7098 /* Bat.swift */,
+				C5D809981F1FC1AE007832A8 /* Bee.swift */,
+				C567F8341F5147DE001D7098 /* Blade.swift */,
+				C567F8361F514A81001D7098 /* Coin.swift */,
 				C5D809821F1D0870007832A8 /* GameScene.swift */,
-				C55699911F28F432002F1EF3 /* Ground.swift */,
+				C5D809961F1FC13D007832A8 /* GameSprite.swift */,
 				C5D809841F1D0870007832A8 /* GameViewController.swift */,
-				C5D809861F1D0870007832A8 /* Main.storyboard */,
+				C55699911F28F432002F1EF3 /* Ground.swift */,
+				C567F8301F5143EE001D7098 /* MadFly.swift */,
+				C55699931F2E1CED002F1EF3 /* Player.swift */,
+				C567F82E1F513CEC001D7098 /* Star.swift */,
 				C5D809891F1D0870007832A8 /* Assets.xcassets */,
 				C5D8098B1F1D0870007832A8 /* LaunchScreen.storyboard */,
-				C5D8098E1F1D0870007832A8 /* Info.plist */,
-				C5D809961F1FC13D007832A8 /* GameSprite.swift */,
-				C5D809981F1FC1AE007832A8 /* Bee.swift */,
-				C55699931F2E1CED002F1EF3 /* Player.swift */,
+				C5D809861F1D0870007832A8 /* Main.storyboard */,
 			);
 			path = "Penguin Escape";
 			sourceTree = "<group>";
@@ -165,8 +180,13 @@
 				C5D809971F1FC13D007832A8 /* GameSprite.swift in Sources */,
 				C5D809831F1D0870007832A8 /* GameScene.swift in Sources */,
 				C55699941F2E1CED002F1EF3 /* Player.swift in Sources */,
+				C567F8331F5146C2001D7098 /* Bat.swift in Sources */,
+				C567F8371F514A81001D7098 /* Coin.swift in Sources */,
 				C5D809851F1D0870007832A8 /* GameViewController.swift in Sources */,
 				C5D8097D1F1D0870007832A8 /* AppDelegate.swift in Sources */,
+				C567F8351F5147DE001D7098 /* Blade.swift in Sources */,
+				C567F8311F5143EE001D7098 /* MadFly.swift in Sources */,
+				C567F82F1F513CEC001D7098 /* Star.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
