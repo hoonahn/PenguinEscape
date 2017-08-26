@@ -17,6 +17,9 @@ class GameScene: SKScene {
     let player = Player()
     let motionManager = CMMotionManager()
     
+    let initialPlayerPosition = CGPoint(x: 150, y:250)
+    var playerProgress = CGFloat()
+    
     override func didMove(to view: SKView) {
         self.anchorPoint = .zero
         
@@ -39,7 +42,7 @@ class GameScene: SKScene {
         ground.createChildern()
         self.addChild(ground)
         
-        player.position = CGPoint(x: 150, y: 250)
+        player.position = initialPlayerPosition
         self.addChild(player)
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
 //        self.motionManager.startAccelerometerUpdates()
@@ -60,8 +63,11 @@ class GameScene: SKScene {
             cam.yScale = newScale
             cam.xScale = newScale
         }
-        
+        playerProgress = player.position.x - initialPlayerPosition.x
+        print(playerProgress)
         self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
+        
+        ground.checkForReposition(playerProgress: playerProgress)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
