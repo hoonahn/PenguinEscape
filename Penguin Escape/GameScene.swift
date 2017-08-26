@@ -12,6 +12,7 @@ import CoreMotion
 class GameScene: SKScene {
     
     let cam = SKCameraNode()
+    var screenCenterY = CGFloat()
     let ground = Ground()
     let player = Player()
     let motionManager = CMMotionManager()
@@ -22,6 +23,8 @@ class GameScene: SKScene {
         self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
         
         self.camera = cam
+        
+        screenCenterY = self.size.height / 2
         
         let bee2 = Bee()
         
@@ -43,7 +46,22 @@ class GameScene: SKScene {
     }
     
     override func didSimulatePhysics() {
-        self.camera!.position = player.position
+//        self.camera!.position = player.position
+        // 카메라가 화면 중간에 위치하도록
+        var cameraYPos = screenCenterY
+        cam.yScale = 1
+        cam.xScale = 1
+        
+        if (player.position.y > screenCenterY) {
+            cameraYPos = player.position.y
+            // 플레이어가 높이 날 수록 카메라 스케일을 줄임
+            let percentOfMaxHeight = (player.position.y - screenCenterY) / (CGFloat(player.maxHeight) - screenCenterY)
+            let newScale = 1 + percentOfMaxHeight
+            cam.yScale = newScale
+            cam.xScale = newScale
+        }
+        
+        self.camera!.position = CGPoint(x: player.position.x, y: cameraYPos)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
